@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive SVG</title>
+</head>
+<body>
+  <!-- SVG graphic with reduced size -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 512" style="width: 500px; height: 600px;">
+    <defs>
+      <style>
+        .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+          stroke: #231f20;
+          stroke-miterlimit: 10;
+        }
+        .cls-2 {
+          fill: #fff200;
+        }
+        .cls-3 {
+          fill: #e0b3e8;
+        }
+        .cls-4 {
+          fill: #8c640c;
+        }
+        .cls-5 {
+          fill: #585e58;
+        }
+      </style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+      <polyline class="cls-3" points="283.7 71.22 317.03 28.46 367.03 53.83 389.49 89.33 363.41 129.19"/>
+    </g>
+    <g id="Layer_3" data-name="Layer 3">
+      <polyline class="cls-5" points="242.39 120.49 272.83 136.43 295.29 154.55 317.75 182.09 364.13 127.01 332.25 90.78 286.48 66.14"/>
+    </g>
+    <g id="Layer_5" data-name="Layer 5">
+      <polygon class="cls-2" points="72.1 336.43 246.01 121.22 277.9 133.54 302.54 154.55 319.2 177.01 152.54 392.96 132.25 392.96 124.28 380.64 105.43 373.39 99.64 360.35 77.9 352.38 72.1 336.43"/>
+    </g>
+    <g id="Layer_6" data-name="Layer 6">
+      <polygon class="cls-4" points="72.11 332.62 47.86 420.78 59.42 435.48 73.44 440.64 80.84 443.93 155.35 391.91 139.32 390.47 129.74 371.32 109.54 373.7 99.1 351.69 78.11 352.65 72.11 332.62"/>
+    </g>
+    <g id="Layer_7" data-name="Layer 7">
+      <polygon class="cls-1" points="48.91 423.27 30.07 470.38 80.07 442.84 72.1 438.49 64.13 434.87 55.07 430.52 48.91 423.27"/>
+    </g>
+  </svg>
+
+  <!-- JavaScript to handle click events on Layer 7 -->
+  <script>
+    let layer7 = document.querySelector('#Layer_7');
+
+    layer7.addEventListener('click', () => {
+      // Function to generate a random hex color
+      function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+      
+      // Set a random color each time Layer 7 is clicked
+      layer7.querySelector('.cls-1').setAttribute('fill', getRandomColor());
+    });
+  </script>
+
+</body>
+</html>
